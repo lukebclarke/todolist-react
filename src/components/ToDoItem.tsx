@@ -1,14 +1,16 @@
+import { Trash2 } from "lucide-react";
 import type { ToDo } from "../types/todo"
 
 interface ToDoItemProps {
     todo: ToDo,
     onCompletedChange: (id: number, completed: boolean) => void;
+    onDelete: (id: number) => void;
 }
 
-export default function ToDoItem({todo, onCompletedChange}: ToDoItemProps) {
+export default function ToDoItem({todo, onCompletedChange, onDelete}: ToDoItemProps) {
     return (
-        <div>
-            <label className="flex items-center gap-2 border rounded-md p-2 border-gray-500 bg-white hover:bg-slate-50">
+        <div className="flex items-center gap-1">
+            <label className="flex items-center gap-2 border rounded-md p-2 border-gray-500 bg-white hover:bg-slate-50 grow">
                 <input
                 type="checkbox"
                 checked={todo.completed}
@@ -19,6 +21,11 @@ export default function ToDoItem({todo, onCompletedChange}: ToDoItemProps) {
                 {todo.title}
             </span>
             </label>
+            <button 
+            onClick={(e) => onDelete(todo.id)}
+            className="p-2">
+                <Trash2 size={20} className="text-gray-500" />
+            </button>
 
         </div>
     )

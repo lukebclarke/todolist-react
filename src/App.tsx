@@ -29,17 +29,10 @@ function App() {
   }
 
   function removeToDo(id: number) {
-    alert()
+    setTodos((prevTodos) => 
+      prevTodos.filter(todo => todo.id !== id)
+  )
   }
-
-  // function removeToDo(id: number) {
-  //   setTodos((prevTodos) => [
-  //     prevTodos.map(todo) => (
-  //       todo.id != id ? : todo}
-  //     )
-
-  //   ])
-  // }
 
   return (
     <main className="py-10 h-screen space-y-5">

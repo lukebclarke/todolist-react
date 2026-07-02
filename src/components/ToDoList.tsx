@@ -22,7 +22,8 @@ export default function ToDoList({todos, onCompletedChange, onDelete}: ToDoListP
               <ToDoItem 
               key={todo.id}
               todo={todo} 
-              onCompletedChange={onCompletedChange}/>
+              onCompletedChange={onCompletedChange}
+              onDelete={onDelete}/>
             ))
           }
         </div>
