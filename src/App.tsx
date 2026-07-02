@@ -1,3 +1,4 @@
+import ToDoItem from "./components/ToDoItem"
 import { TodoList } from "./data/todos"
 
 function App() {
@@ -7,13 +8,11 @@ function App() {
       <h1 className="font-bold text-3xl text-center">
         Your ToDos
       </h1>
-      <div>
-        <div>
+      <div className="max-w-lg mx-auto">
+        <div className="space-y-2">
           {
             TodoList.map(todo => (
-              <p>
-                {todo.title}
-              </p>
+              <ToDoItem todo={todo}/>
             ))
           }
         </div>
