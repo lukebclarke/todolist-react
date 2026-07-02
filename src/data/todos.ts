@@ -14,6 +14,6 @@ export const TodoList: ToDo[] = [
     {
         id: 3,
         title: "Cook dinner",
-        completed: false
+        completed: true
     },
 ];
