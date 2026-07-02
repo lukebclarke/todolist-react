@@ -1,5 +1,4 @@
 import { useState } from "react"
-import ToDoItem from "./components/ToDoItem"
 import { TodoList } from "./data/todos"
 import AddToDoForm from "./components/AddToDoForm"
 import ToDoList from "./components/ToDoList"

@@ -22,7 +22,7 @@ export default function ToDoItem({todo, onCompletedChange, onDelete}: ToDoItemPr
             </span>
             </label>
             <button 
-            onClick={(e) => onDelete(todo.id)}
+            onClick={() => onDelete(todo.id)}
             className="p-2">
                 <Trash2 size={20} className="text-gray-500" />
             </button>
