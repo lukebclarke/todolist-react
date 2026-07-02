@@ -16,6 +16,7 @@ export default function ToDoList({todos, onCompletedChange, onDelete}: ToDoListP
     })
 
     return (
+        <>
         <div className="space-y-2">
           {
             todosSorted.map(todo => (
@@ -27,5 +28,11 @@ export default function ToDoList({todos, onCompletedChange, onDelete}: ToDoListP
             ))
           }
         </div>
+        {todos.length === 0 && (
+            <p className="text-gray-500 text-center text-sm">
+                No tasks added yet. Add one to get started...
+            </p>
+        )}
+        </>
     )
 }
