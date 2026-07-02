@@ -2,6 +2,7 @@ import { useState } from "react"
 import { TodoList } from "./data/todos"
 import AddToDoForm from "./components/AddToDoForm"
 import ToDoList from "./components/ToDoList"
+import ToDoSummary from "./components/ToDoSummary"
 
 function App() {
 
@@ -33,6 +34,10 @@ function App() {
   )
   }
 
+  function deleteAllCompleted() {
+    setTodos((prevTodos) => prevTodos.filter((todo) => !todo.completed))
+  }
+
   return (
     <main className="py-10 h-screen space-y-5 overflow-y-auto">
       <h1 className="font-bold text-3xl text-center">
@@ -46,6 +51,10 @@ function App() {
         onDelete={removeToDo}
         />
       </div>
+      <ToDoSummary
+      todos={todos}
+      deleteAllCompleted={deleteAllCompleted}
+      />
     </main>
   )
 }
