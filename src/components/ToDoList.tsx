@@ -8,10 +8,17 @@ interface ToDoListProps {
 }
 
 export default function ToDoList({todos, onCompletedChange, onDelete}: ToDoListProps) {
+    const todosSorted = todos.sort((a,b) => {
+        if (a.completed === b.completed) {
+            return b.id - a.id
+        }
+        return a.completed ? 1: -1
+    })
+
     return (
         <div className="space-y-2">
           {
-            todos.map(todo => (
+            todosSorted.map(todo => (
               <ToDoItem 
               key={todo.id}
               todo={todo} 
