@@ -19,7 +19,7 @@ function App() {
   function addToDo(title: string) {
     setTodos((prevTodos) => [
     {
-      id: prevTodos.length + 1,
+      id: Date.now(),
       title,
       completed: false
     },
