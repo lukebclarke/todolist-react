@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 interface AddToDoFormProps {
-    onSubmit: (title: string) => void;
+    onSubmit: (title: string, scheduled: string) => void;
 }
 
 export default function AddToDoForm({onSubmit}: AddToDoFormProps) {
@@ -12,7 +12,7 @@ export default function AddToDoForm({onSubmit}: AddToDoFormProps) {
 
         if (!(input.trim())) return;
 
-        onSubmit(input);
+        onSubmit(input, new Date().toISOString());
         setInput("");
     }
 

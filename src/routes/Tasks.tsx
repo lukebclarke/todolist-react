@@ -7,7 +7,7 @@ import type { ToDo } from "../types/todo";
 interface TasksProps {
     todos: ToDo[];
     setToDoCompleted: (id: number, completed: boolean) => void;
-    addToDo: (title: string) => void;
+    addToDo: (title: string, scheduled: string) => void;
     removeToDo: (id: number) => void;
     deleteAllCompleted: () => void;
 }
@@ -16,7 +16,7 @@ export default function Tasks({todos, setToDoCompleted, addToDo, removeToDo, del
     return (
         <>
         <h1 className="font-bold pt-10 text-3xl text-center">
-        Your ToDos
+        Your Tasks
         </h1>
         <div className="max-w-lg mx-auto bg-slate-100 rounded-md p-5 space-y-6">
             <AddToDoForm onSubmit={addToDo}/>

@@ -1,5 +1,7 @@
 export interface ToDo {
     id: number,
     title: string,
-    completed: boolean;
+    completed: boolean,
+    show: boolean,
+    scheduled: string;
 }

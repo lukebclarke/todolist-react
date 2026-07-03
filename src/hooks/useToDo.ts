@@ -21,12 +21,14 @@ export default function useToDos() {
     )
     }
 
-    function addToDo(title: string) {
+    function addToDo(title: string, scheduled: string) {
     setTodos((prevTodos) => [
     {
         id: Date.now(),
         title,
-        completed: false
+        completed: false,
+        show: true,
+        scheduled: scheduled
     },
     ...prevTodos
     ])
