@@ -19,7 +19,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Tasks todos={todos} setToDoCompleted={setToDoCompleted} addToDo={addToDo} removeToDo={removeToDo} deleteAllCompleted={deleteAllCompleted}/>}/>
-        <Route path="/history" element={<History/>}/>
+        <Route path="/history" element={<History todos={todos} setToDoCompleted={setToDoCompleted} removeToDo={removeToDo}/>}/>
         <Route path="/calendar" element={<Calendar/>}/>
       </Routes>
     </main>
