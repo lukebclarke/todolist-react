@@ -1,8 +1,9 @@
-import AddToDoForm from "./components/AddToDoForm"
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import ToDoList from "./components/ToDoList"
-import ToDoSummary from "./components/ToDoSummary"
 import useToDos from "./hooks/useToDo"
+import Tasks from "./routes/tasks";
+import History from "./routes/History";
+import Calendar from "./routes/Calendar";
 
 function App() {
   const {
@@ -16,21 +17,11 @@ function App() {
   return (
     <main className="py-10 h-screen space-y-5 overflow-y-auto">
       <Navbar/>
-      <h1 className="font-bold pt-10 text-3xl text-center">
-        Your ToDos
-      </h1>
-      <div className="max-w-lg mx-auto bg-slate-100 rounded-md p-5 space-y-6">
-        <AddToDoForm onSubmit={addToDo}/>
-        <ToDoList 
-        todos={todos}
-        onCompletedChange={setToDoCompleted}
-        onDelete={removeToDo}
-        />
-      </div>
-      <ToDoSummary
-      todos={todos}
-      deleteAllCompleted={deleteAllCompleted}
-      />
+      <Routes>
+        <Route path="/" element={<Tasks todos={todos} setToDoCompleted={setToDoCompleted} addToDo={addToDo} removeToDo={removeToDo} deleteAllCompleted={deleteAllCompleted}/>}/>
+        <Route path="/history" element={<History/>}/>
+        <Route path="/calendar" element={<Calendar/>}/>
+      </Routes>
     </main>
   )
 }
