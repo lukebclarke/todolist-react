@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import useToDos from "./hooks/useToDo"
-import Tasks from "./routes/tasks";
+import Tasks from "./routes/Tasks";
 import History from "./routes/History";
 import Calendar from "./routes/Calendar";
 
